@@ -24,11 +24,12 @@ class UsersController extends Controller
     {
         $this->authorize('update', $user);
         $data = $request->all();
-
         if ($request->avatar) {
             $result = $uploader->save($request->avatar, 'avatars', $user->id,416);
             if ($result) {
                 $data['avatar'] = $result['path'];
+                //删除原图片地址
+                unlink(str_replace(config('app.url'),public_path(),$user->avatar));
             }
         }
 

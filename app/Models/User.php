@@ -38,15 +38,33 @@ class User extends Authenticatable implements MustVerifyEmailContract
         'email_verified_at' => 'datetime',
     ];
 
-    //关联  一个用户可以有多个帖子
+
+    /**
+     * 关联帖子 一个用户可以有多个帖子
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function topics()
     {
         return $this->hasMany(Topic::class);
     }
 
-    //优化代码
+    /**
+     * 关联回复
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+    /**
+     * 优化代码
+     * @param $model
+     * @return bool
+     */
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
     }
+
 }

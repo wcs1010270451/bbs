@@ -17,6 +17,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
     }
 
     /**
+     * 添加通知消息
      * @param $instance
      */
     public function notify($instance)
@@ -32,6 +33,16 @@ class User extends Authenticatable implements MustVerifyEmailContract
         }
 
         $this->laravelNotify($instance);
+    }
+
+    /**
+     * 清空消息数
+     */
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
     }
 
     /**

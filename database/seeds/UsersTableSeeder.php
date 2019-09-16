@@ -17,16 +17,9 @@ class UsersTableSeeder extends Seeder
 
         // 头像假数据
         $avatars = [
-            'http://bbs.wcs/uploads/images/avatars/94i2vVGeRIO8H66sAdJ69WpnURFCMvEJ.jpg',
-            'http://bbs.wcs/uploads/images/avatars/k82PcXIJpd0tENiJSycndtNBUGIkDowK.jpg',
-            'http://bbs.wcs/uploads/images/avatars/OT6NMpFn2k5VeATQJq3pTeYDhwIAKD3v.jpg',
-            'http://bbs.wcs/uploads/images/avatars/5XPw6szFHzzJ9u8BDYo0uIzXGnK89iHC.jpg',
-            'http://bbs.wcs/uploads/images/avatars/e2MdfUMzCIKOYY9OfGemziA53ilwc545.jpg',
-            'http://bbs.wcs/uploads/images/avatars/vRFyaby6LDs6jLQBNFMraAoeJ02Ihjms.jpg',
-            'http://bbs.wcs/uploads/images/avatars/jhLJ9xctz73ApVD7oW16jDVYcihYNIRx.jpg',
-            'http://bbs.wcs/uploads/images/avatars/lm1EOkeb0mIHy3KxDnbicKT15t61BGhx.jpg',
-            'http://bbs.wcs/uploads/images/avatars/r0OkvIW0xyPdh7bk9zR6OuqYqY3X6Di3.jpg',
-            'http://bbs.wcs/uploads/images/avatars/A6iq7iMxe8FA4zQNXN5RviGooUXcNM1d.jpg',
+            'https://s.gravatar.com/avatar/27b4b94ae0c76be0fc57417f6e958b6a?s=80',
+            'https://s.gravatar.com/avatar/cd5f4346ad526f035892c7bed3a18176?s=80',
+            'https://s.gravatar.com/avatar/09eeb3d21be03e643b2c9586100e7151?s=80'
         ];
 
         // 生成数据集合
@@ -50,7 +43,7 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'Wcs';
         $user->email = 'wcs@example.com';
-        $user->avatar = 'http://bbs.wcs/uploads/images/avatars/Qmck9nUAwX6g4PWcH7eCVRQGdv5sAv7S.jpg';
+        $user->avatar = 'https://s.gravatar.com/avatar/09eeb3d21be03e643b2c9586100e7151?s=80';
         $user->save();
 
         // 初始化用户角色，将 1 号用户指派为『站长』
